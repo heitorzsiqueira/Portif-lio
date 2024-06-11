@@ -7,11 +7,9 @@ function abrirMenu() {
   }
 
   function crescer(){
-    document.getElementById("Perfil").style.width = "100%" ;
+    document.getElementById("Perfil").style.width = "50%" ;
   }
 
   function decrescer(){
-    document.getElementById("Perfil").style.width = "80%" ;
+    document.getElementById("Perfil").style.width = "40%" ;
   }
-
-  
