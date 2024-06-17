@@ -43,6 +43,22 @@ p{
     padding: 2%;
 }
 
+.Rodape{
+    display: grid;
+    grid-template-columns: 70% 20%;
+    margin-top: 30%;
+    height: 5%;
+   
+ 
+}
+.Rodape p{
+    font-size: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding-left: 2%;
+    
+}
+
 .Corpo{
     height: 200%;
     display: grid;
