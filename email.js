@@ -1,25 +1,27 @@
-// Inicialização do EmailJS
-emailjs.init('Heitor'); // Substitua 'user_xxxxxxxxx' pelo seu ID de usuário do EmailJS
+document.addEventListener("DOMContentLoaded", function() {
+    emailjs.init("Sm5R3KyVheHelZO4W"); 
 
-// Função para enviar o formulário
-function enviarEmail() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    const templateParams = {
-        name: name,
-        email: email,
-        message: message
-    };
+        const serviceID = 'service_dv6v9ih'; 
+        const templateID = 'template_rxn2029';
 
-    // Envio do email utilizando o método send do EmailJS
-    email.send('service_dv6v9ih', 'template_rxn2029', templateParams) // Substitua pelos seus IDs reais
-        .then(function(response) {
-            alert('Email enviado com sucesso!', response.status, response.text);
-        }, function(error) {
-            alert('Ocorreu um erro ao enviar o email:', error);
-        });
-}
+        const templateParams = {
+            user_name: document.getElementById('name').value,
+            user_email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
 
+        console.log("Template Params:", templateParams);
 
+        emailjs.send(serviceID, templateID, templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Email enviado com sucesso!');
+            }, function(error) {
+                console.error('FAILED...', error);
+                alert('Falha ao enviar o email: ' + JSON.stringify(error));
+            });
+    });
+});
