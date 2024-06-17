@@ -191,12 +191,10 @@ header{
 }
 .Niveis{
     background-color: #212121;
-    height: 70%;
+    height: 80%;
     width: 80%;
     display: grid;
     grid-template-columns: 40% 50%;
-    column-gap: 5%;
-    row-gap: 5%;
     padding: 5%;
     align-items: baseline;
     margin-left: 5%;
